@@ -1,7 +1,7 @@
-name: 'migrate_directory'
+name: 'Migrate Directory'
 type: module
 description: 'Migrate Directory'
 core: 8.x
 package: 'Migrate'
 dependencies:
-  - migrate
+  - drupal:migrate
