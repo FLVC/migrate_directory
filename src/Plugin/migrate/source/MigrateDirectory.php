@@ -64,7 +64,11 @@ class MigrateDirectory extends SourcePluginBase {
     foreach ($iterator as $fileinfo) {
       $out[] = [
         'path' => $fileinfo->getPathname(),
+        'relative_path' => ltrim(str_replace($this->configuration['path'], '', $fileinfo->getPathname()), DIRECTORY_SEPARATOR),
+        'absolute_path'=> $fileinfo->getRealPath(),
         'filename' => $fileinfo->getFilename(),
+        'basename' => $fileinfo->getBasename(),
+        'extension' => $fileinfo->getExtension(),
       ];
     }
 
@@ -89,7 +93,11 @@ class MigrateDirectory extends SourcePluginBase {
   public function fields() {
     return [
       'path' => $this->t('The file path'),
+      'relative_path' => $this->t('The file path relative to the directory given source plugin'),
+      'absolute_path' => $this->t('The absolute path to the file, resolving links'),
       'filename' => $this->t('The filename'),
+      'basename' => $this->t('The basename of the file'),
+      'extension' => $this->t('The extension of the file, if any'),
     ];
   }
 
