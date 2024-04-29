@@ -1,5 +1,5 @@
 {
-  "name": "drupal/migrate_directory",
+  "name": "flvc/migrate_directory",
   "type": "drupal-module",
   "description": "Migrate Directory",
   "keywords": ["Drupal"],
